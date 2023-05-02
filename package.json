@@ -1,0 +1,20 @@
+{
+	"name": "clueless",
+	"version": "0.0.0",
+	"description": "A Discord bot for simple stuff",
+	"main": "bot.js",
+	"scripts": {
+		"dev": "nodemon ./bot.js"
+	},
+	"keywords": [
+		"discord-bot"
+	],
+	"author": "Goose-Of-War",
+	"license": "UNLICENSED",
+	"dependencies": {
+		"discord.js": "^14.10.2"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.22"
+	}
+}
