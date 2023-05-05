@@ -2,9 +2,9 @@
 	"name": "clueless",
 	"version": "0.0.0",
 	"description": "A Discord bot for simple stuff",
-	"main": "bot.js",
+	"main": "src/bot.js",
 	"scripts": {
-		"dev": "nodemon ./bot.js"
+		"dev": "nodemon ./src/bot.js"
 	},
 	"keywords": [
 		"discord-bot"
