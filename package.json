@@ -4,7 +4,7 @@
 	"description": "A Discord bot for simple stuff",
 	"main": "src/bot.js",
 	"scripts": {
-		"dev": "nodemon ./src/bot.js"
+		"dev": "nodemon ."
 	},
 	"keywords": [
 		"discord-bot"

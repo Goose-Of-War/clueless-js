@@ -12,12 +12,13 @@ module.exports = {
 			.setDescription('Choose your opponent (bot if left blank)')),
 
 	execute: async (interaction) => {
+		const requestedUser = interaction.user;
 		const opponentUser = interaction.options.getUser('opponent') ?? client.user;
 		await interaction.reply('Starting a game in the DM');
 		if (opponentUser === client.user) {
-			const response = await againstBot(interaction);
+			const response = await againstBot(requestedUser);
 			await interaction.channel.send(response);
 		}
-		else await againstUser(interaction);
+		else await againstUser(requestedUser, opponentUser);
 	}
 }

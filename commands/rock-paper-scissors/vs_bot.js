@@ -1,7 +1,6 @@
 const gameMethods = require('./base');
 
-module.exports = againstBot = async function (interaction) {
-	const player = interaction.user;
+module.exports = againstUser = async function (player) {
 	try {
 		// Create a DM channel if doesn't exist.
 		await player.createDM();
@@ -9,7 +8,7 @@ module.exports = againstBot = async function (interaction) {
 		const startingMessage = await gameMethods.sendStartingMessage(player);
 		// Check for button click response
 		const response = await startingMessage.awaitMessageComponent({
-			filter: res => res.user.id === interaction.user.id,
+			filter: res => res.user.id === player.id,
 			time: 7_000
 		});
 		// Cancel game if needed
@@ -40,7 +39,7 @@ module.exports = againstBot = async function (interaction) {
 		}
 		// Check for button click response
 		const userResponse = await gameMessage.awaitMessageComponent({
-			filter: res => res.user.id === interaction.user.id,
+			filter: res => res.user.id === player.id,
 			time: 7_000
 		});
 		await userResponse.update({
@@ -58,7 +57,6 @@ module.exports = againstBot = async function (interaction) {
 		}
 	} catch (err) {
 		console.log(err);
-		// await interaction.channel.send(err.toString());
 		throw new Error(err);
 	}
 }
