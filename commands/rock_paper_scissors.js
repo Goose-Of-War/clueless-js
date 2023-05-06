@@ -10,9 +10,14 @@ module.exports = {
 		.addUserOption(option => option
 			.setName('opponent')
 			.setDescription('Choose your opponent (bot if left blank)')),
+
 	execute: async (interaction) => {
 		const opponentUser = interaction.options.getUser('opponent') ?? client.user;
-		if (opponentUser === client.user) await againstBot(interaction);
+		await interaction.reply('Starting a game in the DM');
+		if (opponentUser === client.user) {
+			const response = await againstBot(interaction);
+			await interaction.channel.send(response);
+		}
 		else await againstUser(interaction);
 	}
 }
