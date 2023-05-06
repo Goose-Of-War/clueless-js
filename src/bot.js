@@ -2,10 +2,11 @@ const discord = require('discord.js');
 
 const commands = require('./commands');
 const secrets = require('./secret')
-
+// Initializing client and REST API connection
 global.client = new discord.Client({ intents: [discord.GatewayIntentBits.Guilds] })
 const rest = new discord.REST({ version: 10 }).setToken(secrets.appToken);
-
+// CLear the console. Old mess is annoying to look at :/
+console.clear();
 // Register slash commands
 (async () => {
 	try {
