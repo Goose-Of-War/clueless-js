@@ -3,7 +3,7 @@ const discord = require('discord.js');
 const commands = require('./commands');
 const secrets = require('./secret')
 // Initializing client and REST API connection
-global.client = new discord.Client({ intents: [discord.GatewayIntentBits.Guilds] })
+global.client = new discord.Client({ intents: [discord.GatewayIntentBits.Guilds, discord.GatewayIntentBits.GuildMembers] })
 const rest = new discord.REST({ version: 10 }).setToken(secrets.appToken);
 // CLear the console. Old mess is annoying to look at :/
 console.clear();
@@ -32,7 +32,7 @@ client.on('ready', () => {
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
-	console.log(interaction);
+	// console.log(interaction);
 	await client.commands.get(interaction.commandName)
 		.execute(interaction);
 });

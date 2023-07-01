@@ -12,7 +12,7 @@
 	"author": "Goose-Of-War",
 	"license": "UNLICENSED",
 	"dependencies": {
-		"discord.js": "^14.10.2"
+		"discord.js": "^14.11.0"
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.22"
