@@ -32,7 +32,7 @@ client.on('ready', () => {
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
-	// console.log(interaction);
+	console.log(`Interaction requested by [${interaction.user.username}] in [${interaction.guild}]`);
 	await client.commands.get(interaction.commandName)
 		.execute(interaction);
 });
