@@ -23,12 +23,13 @@ module.exports = {
 			// console.log(oldRole);
 			const members = [...await interaction.guild.members.fetch()].map(m => m[1]).filter(member => member.roles.cache.has(oldRole.id));
 			console.log(members.map(member => member.nickname ?? member.user.username))
+			await interaction.reply('Working on it >_<');
 			await Promise.all(members.map(member => member.roles.remove(oldRole)));
 			if (newRole) await Promise.all(members.map(member => member.roles.add(newRole)));
-			await interaction.reply('Working on it >_<')
+			await interaction.channel.send('Roles changed successfully');
 		} catch (err) {
 			console.log(err);
-			await interaction.channel.send(err.toString());
+			await interaction.reply(err.toString());
 		}
 	}
 };
