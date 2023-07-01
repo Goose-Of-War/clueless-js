@@ -4,7 +4,9 @@
 	"description": "A Discord bot for simple stuff",
 	"main": "src/bot.js",
 	"scripts": {
-		"dev": "nodemon ."
+		"dev": "nodemon .",
+		"lint": "npx eslint .",
+		"lint-fix": "npx eslint . --fix"
 	},
 	"keywords": [
 		"discord-bot"
@@ -15,6 +17,7 @@
 		"discord.js": "^14.11.0"
 	},
 	"devDependencies": {
+		"eslint": "^8.44.0",
 		"nodemon": "^2.0.22"
 	}
 }

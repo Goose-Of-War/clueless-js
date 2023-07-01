@@ -1,9 +1,9 @@
 const discord = require('discord.js');
 
 const commands = require('./commands');
-const secrets = require('./secret')
+const secrets = require('./secret');
 // Initializing client and REST API connection
-global.client = new discord.Client({ intents: [discord.GatewayIntentBits.Guilds, discord.GatewayIntentBits.GuildMembers] })
+global.client = new discord.Client({ intents: [discord.GatewayIntentBits.Guilds, discord.GatewayIntentBits.GuildMembers] });
 const rest = new discord.REST({ version: 10 }).setToken(secrets.appToken);
 // CLear the console. Old mess is annoying to look at :/
 console.clear();
@@ -12,8 +12,8 @@ console.clear();
 	try {
 		console.log('Started refreshing application (/) commands.');
 		await rest.put(
-			discord.Routes.applicationCommands(secrets.clientID), 
-			{ 
+			discord.Routes.applicationCommands(secrets.clientID),
+			{
 				body: Object.values(commands.toJSON())
 					.map(command => command.data)
 			}
