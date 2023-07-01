@@ -25,7 +25,8 @@ As I thought more and more, it became more and more apparent that I was extremel
 Well, the structure was something which took me a while to get used to, so I really don't have much progress except for a `/ping` command (which just returns a "**Pong!**", the classic)
 
 Thanks to a [pro friend](https://github.com/harshkhandeparkar)'s suggestion, I started to make some games in the bot. But then, I got stuck in a slump and left it as it was ;-;  
-Now, I'm just making functions which I think I need in the server moving forward.
+Now, I'm just making functions which I think I need in the server moving forward.  
+
 ---
 ## Running it locally
 
