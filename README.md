@@ -34,7 +34,7 @@ As per the docs of discord.js, this needs at least Node v16.9.0 (I have v16.9.0,
 
 First things first, you'll need a Discord application. Proceed to the [Developer Portal](https://discord.com/developers/applications) and create an application.
 
-Once you clone the repository, store the client ID and token in a file called `secrets.json` in the `src` folder
+Once you clone the repository, store the client ID and token in a file called `secret.json` in the `src` folder
 
 ```json
 {
